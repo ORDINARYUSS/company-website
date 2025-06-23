@@ -1,0 +1,280 @@
+/* ===========================
+   MAIN CSS - Core Variables & Base Styles
+   =========================== */
+
+:root {
+    /* Creative Business Color Palette */
+    --primary-color: #FF6B35;
+    --secondary-color: #004E89;
+    --accent-color: #1A9988;
+    --accent-light: #6FBEAA;
+    --neutral-dark: #1C2541;
+    --neutral-light: #F7F9FC;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #FF6B35 0%, #FF8E53 100%);
+    --gradient-secondary: linear-gradient(135deg, #004E89 0%, #1B5E7D 100%);
+    --gradient-accent: linear-gradient(135deg, #1A9988 0%, #6FBEAA 100%);
+    --gradient-creative: linear-gradient(135deg, #FF6B35 0%, #1A9988 50%, #004E89 100%);
+    
+    /* Shadows */
+    --shadow-light: 0 10px 40px rgba(255, 107, 53, 0.15);
+    --shadow-medium: 0 15px 50px rgba(0, 78, 137, 0.2);
+    --shadow-heavy: 0 25px 80px rgba(28, 37, 65, 0.3);
+    
+    /* Typography */
+    --font-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 25px;
+    --radius-full: 50px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --transition-bounce: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===========================
+   RESET & BASE STYLES
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--neutral-dark);
+    background: var(--neutral-light);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===========================
+   TYPOGRAPHY
+   =========================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+    color: var(--neutral-dark);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: var(--font-weight-black);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: var(--font-weight-black);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: var(--font-weight-bold);
+}
+
+h4 {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: var(--font-weight-bold);
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* ===========================
+   UTILITY CLASSES
+   =========================== */
+
+.hidden {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-5 { margin-bottom: var(--spacing-xl); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+.mt-5 { margin-top: var(--spacing-xl); }
+
+/* ===========================
+   LAYOUT COMPONENTS
+   =========================== */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.section-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* ===========================
+   GRID SYSTEM
+   =========================== */
+
+.grid-component {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.grid-1 { 
+    grid-template-columns: 1fr; 
+}
+
+.grid-2 { 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+}
+
+.grid-3 { 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+}
+
+.grid-4 { 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+}
+
+.grid-auto { 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+}
+
+/* ===========================
+   BACKGROUND ELEMENTS
+   =========================== */
+
+.creative-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-creative);
+    z-index: -2;
+    opacity: 0.03;
+}
+
+.creative-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        radial-gradient(circle at 25% 25%, var(--primary-color) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, var(--accent-color) 1px, transparent 1px);
+    background-size: 50px 50px, 30px 30px;
+    animation: creativeDrift 20s linear infinite;
+}
+
+/* ===========================
+   SECTION STYLES
+   =========================== */
+
+.section-component {
+    padding: 6rem 0;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xxl);
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: var(--font-weight-black);
+    color: var(--neutral-dark);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
