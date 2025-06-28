@@ -2,409 +2,1105 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
-    <meta name="description" content="Özikiler - İleri teknoloji makine imalatı ve akıllı otomasyon çözümleri. Endüstri 4.0 öncüsü olarak geleceğin üretim teknolojilerini sunuyoruz.">
-    <meta name="keywords" content="makine imalatı, otomasyon, endüstri 4.0, CNC, PLC, teknoloji">
-    <title>Özikiler - Endüstriyel Makine İmalatı</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/animations.css">
-    <link rel="stylesheet" href="styles/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Özikiler A.Ş. - Endüstriyel makine imalatı ve otomasyon sistemlerinde 30+ yıllık deneyim. ISO 9001 kalite güvencesi.">
+    <title>Özikiler A.Ş. - Endüstriyel Makine İmalatı ve Otomasyon Sistemleri</title>
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Conservative Corporate Colors */
+            --primary-dark: #1a1a1a;
+            --primary-gray: #2d3748;
+            --secondary-gray: #4a5568;
+            --accent-blue: #2b6cb0;
+            --accent-gold: #b8860b;
+            --neutral-light: #f7fafc;
+            --neutral-white: #ffffff;
+            --neutral-border: #e2e8f0;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-light: #718096;
+            
+            /* Typography */
+            --font-primary: 'Georgia', 'Times New Roman', serif;
+            --font-secondary: 'Arial', 'Helvetica', sans-serif;
+            --font-weight-light: 300;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-xxl: 4rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            
+            /* Border Radius */
+            --radius-sm: 0.25rem;
+            --radius-md: 0.375rem;
+            --radius-lg: 0.5rem;
+            
+            /* Transitions */
+            --transition: all 0.15s ease-in-out;
+        }
+        
+        body {
+            font-family: var(--font-secondary);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--neutral-white);
+            font-size: 16px;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-primary);
+            color: var(--primary-dark);
+            font-weight: var(--font-weight-bold);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h1 { font-size: clamp(2.25rem, 4vw, 3rem); }
+        h2 { font-size: clamp(1.875rem, 3.5vw, 2.5rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 1.875rem); }
+        h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+        
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+        
+        /* Header */
+        .header {
+            background: var(--neutral-white);
+            border-bottom: 2px solid var(--neutral-border);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            min-height: 80px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: var(--font-primary);
+            font-size: 1.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-dark);
+            color: white;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-xl);
+        }
+        
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            padding: 0.75rem 0;
+            position: relative;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent-blue);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-gray) 100%);
+            color: white;
+            padding: 10rem 0 8rem;
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-subtitle {
+            font-size: 1rem;
+            font-weight: var(--font-weight-medium);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: var(--font-secondary);
+        }
+        
+        .hero-title {
+            margin-bottom: 2rem;
+            color: white;
+            font-family: var(--font-primary);
+        }
+        
+        .hero-description {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            border: 2px solid transparent;
+            border-radius: var(--radius-sm);
+            font-weight: var(--font-weight-semibold);
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: var(--font-secondary);
+        }
+        
+        .btn-primary {
+            background: var(--accent-gold);
+            color: white;
+            border-color: var(--accent-gold);
+        }
+        
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-dark);
+        }
+        
+        /* Section */
+        .section {
+            padding: 7rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-subtitle {
+            color: var(--accent-blue);
+            font-weight: var(--font-weight-semibold);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            font-family: var(--font-secondary);
+        }
+        
+        .section-title {
+            margin-bottom: 1.5rem;
+            font-family: var(--font-primary);
+        }
+        
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        /* Grid */
+        .grid {
+            display: grid;
+            gap: 2.5rem;
+        }
+        
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        
+        /* Cards */
+        .card {
+            background: var(--neutral-white);
+            border: 1px solid var(--neutral-border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-blue);
+        }
+        
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-blue);
+            color: white;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 2rem;
+            font-weight: bold;
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            font-family: var(--font-primary);
+        }
+        
+        .card-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        /* Services Section */
+        .services {
+            background: var(--neutral-light);
+        }
+        
+        /* Products Section */
+        .products {
+            background: var(--neutral-white);
+        }
+        
+        .product-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 4rem;
+            border: 1px solid var(--neutral-border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+        
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: var(--neutral-white);
+            border: none;
+            color: var(--text-primary);
+            font-weight: var(--font-weight-medium);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.875rem;
+        }
+        
+        .tab-btn:not(:last-child) {
+            border-right: 1px solid var(--neutral-border);
+        }
+        
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: var(--accent-blue);
+            color: white;
+        }
+        
+        .product-card {
+            background: white;
+            border: 1px solid var(--neutral-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-blue);
+        }
+        
+        .product-image {
+            height: 220px;
+            background: var(--primary-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        
+        .product-info {
+            padding: 2rem;
+        }
+        
+        .product-title {
+            font-size: 1.125rem;
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+            font-family: var(--font-primary);
+        }
+        
+        .product-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .product-status {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: var(--font-weight-semibold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-available {
+            background: #f0f9ff;
+            color: var(--accent-blue);
+            border: 1px solid var(--accent-blue);
+        }
+        
+        .status-limited {
+            background: #fef3c7;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+        }
+        
+        /* About Section */
+        .about {
+            background: var(--neutral-light);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+            margin-bottom: 5rem;
+        }
+        
+        .about-text h3 {
+            color: var(--accent-blue);
+            margin-bottom: 1.5rem;
+            font-family: var(--font-primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: white;
+            border: 1px solid var(--neutral-border);
+            border-radius: var(--radius-lg);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-primary);
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: var(--font-weight-medium);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+        
+        .values-section {
+            margin-top: 5rem;
+            text-align: center;
+        }
+        
+        .values-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-dark);
+            font-family: var(--font-primary);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-item {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: white;
+            border: 1px solid var(--neutral-border);
+            border-radius: var(--radius-lg);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .value-title {
+            font-size: 1.25rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-family: var(--font-primary);
+        }
+        
+        .value-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            font-family: var(--font-primary);
+        }
+        
+        .footer-section p,
+        .footer-section li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero {
+                padding: 8rem 0 6rem;
+            }
+            
+            .section {
+                padding: 5rem 0;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .product-tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn:not(:last-child) {
+                border-right: none;
+                border-bottom: 1px solid var(--neutral-border);
+            }
+            
+            .card {
+                padding: 2rem;
+            }
+            
+            .section-header {
+                margin-bottom: 3rem;
+            }
+        }
+        
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Utility Classes */
+        .hidden { display: none; }
+        .text-center { text-align: center; }
+        .mb-0 { margin-bottom: 0; }
+        .mt-2 { margin-top: 2rem; }
+        
+        /* Professional touches */
+        .company-name {
+            font-family: var(--font-primary);
+            font-weight: var(--font-weight-bold);
+        }
+        
+        .certification-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--accent-gold);
+            color: white;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: var(--font-weight-semibold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
 </head>
 <body>
-    <div id="app">
-        <!-- Loading Component -->
-        <div id="loading" class="loading-overlay">
-            <div class="loading-spinner"></div>
-        </div>
-
-        <!-- Creative Background -->
-        <div class="creative-bg"></div>
-
-        <!-- Header Component -->
-        <header id="header" class="header-component">
-            <nav class="nav-container">
-                <a href="#" class="logo-component">
-                    <div class="logo-icon">⚙️</div>
-                    Özikiler
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">
+                    <div class="logo-icon">Ö</div>
+                    <span class="company-name">Özikiler A.Ş.</span>
                 </a>
                 <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="#hero" class="nav-link active" data-section="hero">Ana Sayfa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#services" class="nav-link" data-section="services">Hizmetler</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#products" class="nav-link" data-section="products">Ürün Kataloğu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#rd" class="nav-link" data-section="rd">AR-GE</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link" data-section="about">Hakkımızda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link" data-section="contact">İletişim</a>
-                    </li>
+                    <li><a href="#hero" class="nav-link active">Ana Sayfa</a></li>
+                    <li><a href="#services" class="nav-link">Hizmetlerimiz</a></li>
+                    <li><a href="#products" class="nav-link">Ürünlerimiz</a></li>
+                    <li><a href="#about" class="nav-link">Kurumsal</a></li>
+                    <li><a href="#contact" class="nav-link">İletişim</a></li>
                 </ul>
             </nav>
-        </header>
+        </div>
+    </header>
 
-        <!-- Hero Component -->
-        <section id="hero" class="hero-component">
-            <div class="hero-particles">
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-            </div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
             <div class="hero-content">
-                <div class="hero-subtitle">Endüstri 4.0 Öncüsü</div>
-                <h1 class="hero-title">Geleceğin Üretim Teknolojileri</h1>
+                <div class="hero-subtitle">Endüstriyel Mühendislik Çözümleri</div>
+                <h1 class="hero-title">Profesyonel Makine İmalatı ve Otomasyon Sistemleri</h1>
                 <p class="hero-description">
-                    İleri teknoloji makine imalatı ve akıllı otomasyon çözümleri ile 
-                    endüstriyel dönüşümünüzün partneri oluyoruz
+                    1993 yılından bu yana endüstriyel makine imalatı ve otomasyon sistemleri alanında 
+                    faaliyet gösteren Özikiler A.Ş., ISO 9001 kalite güvencesi ile müşterilerine 
+                    güvenilir ve yüksek performanslı çözümler sunmaktadır.
                 </p>
                 <div class="hero-actions">
-                    <a href="#products" class="btn-component btn-primary">
-                        🚀 Ürünleri Keşfet
-                    </a>
-                    <a href="#services" class="btn-component btn-secondary">
-                        💼 Hizmetlerimiz
-                    </a>
+                    <a href="#products" class="btn btn-primary">Ürün Kataloğu</a>
+                    <a href="#contact" class="btn btn-secondary">Teklif Talep Edin</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Services Component -->
-        <section id="services" class="section-component">
-            <div class="section-container">
-                <div class="section-header">
-                    <div class="section-subtitle">Çözümlerimiz</div>
-                    <h2 class="section-title">Kapsamlı Hizmet Portföyü</h2>
-                    <p class="section-description">
-                        İnovatif teknolojiler ve uzman ekibimizle endüstriyel ihtiyaçlarınıza 
-                        özel çözümler sunuyoruz
-                    </p>
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Hizmetlerimiz</div>
+                <h2 class="section-title">Kapsamlı Endüstriyel Çözümler</h2>
+                <p class="section-description">
+                    Otuz yılı aşkın deneyimimiz ile makine imalatından otomasyon sistemlerine, 
+                    bakım hizmetlerinden mühendislik danışmanlığına kadar geniş bir yelpazede 
+                    profesyonel hizmetler sunmaktayız.
+                </p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-icon">⚙</div>
+                    <h3 class="card-title">Makine İmalatı</h3>
+                    <p class="card-description">CNC işleme merkezleri, hassas torna tezgahları ve özel amaçlı üretim makinelerinin tasarım ve imalatı. DIN ve ISO standartlarına uygun üretim.</p>
                 </div>
-                <div class="grid-component grid-3">
-                    <div class="card-component">
-                        <div class="card-icon">🏭</div>
-                        <h3 class="card-title">İleri Makine İmalatı</h3>
-                        <p class="card-description">CNC işleme merkezleri, hassas üretim sistemleri ve endüstriyel makineler</p>
+                <div class="card">
+                    <div class="card-icon">🔧</div>
+                    <h3 class="card-title">Otomasyon Sistemleri</h3>
+                    <p class="card-description">PLC tabanlı kontrol sistemleri, SCADA yazılımları, endüstriyel haberleşme ağları ve proses otomasyon çözümleri.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛠</div>
+                    <h3 class="card-title">Bakım ve Servis</h3>
+                    <p class="card-description">Periyodik bakım programları, arıza giderme hizmetleri, yedek parça temini ve 7/24 teknik destek imkanı.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <h3 class="card-title">Mühendislik Danışmanlığı</h3>
+                    <p class="card-description">Üretim süreçlerinin optimizasyonu, verimlilik analizi, teknoloji geliştirme ve endüstriyel proje yönetimi danışmanlığı.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3 class="card-title">Özel Projeler</h3>
+                    <p class="card-description">Müşteri ihtiyaçlarına özel tasarım projeler, prototip geliştirme ve anahtar teslim sistem entegrasyonları.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✓</div>
+                    <h3 class="card-title">Kalite Güvence</h3>
+                    <p class="card-description">ISO 9001:2015 kalite yönetim sistemi kapsamında test, muayene ve belgelendirme hizmetleri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section products">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Ürünlerimiz</div>
+                <h2 class="section-title">Endüstriyel Makine ve Sistemler</h2>
+                <p class="section-description">
+                    CE işaretli ve uluslararası kalite standartlarında üretilen makine ve sistemlerimiz, 
+                    endüstriyel üretimde güvenilirlik ve verimlilik sağlamaktadır.
+                </p>
+            </div>
+            
+            <div class="product-tabs">
+                <button class="tab-btn active" onclick="showTab('machines')">İmalat Makineleri</button>
+                <button class="tab-btn" onclick="showTab('automation')">Otomasyon Sistemleri</button>
+            </div>
+            
+            <div id="machines" class="tab-content active">
+                <div class="grid grid-2">
+                    <div class="product-card">
+                        <div class="product-image">M</div>
+                        <div class="product-info">
+                            <h4 class="product-title">CNC İşleme Merkezi ÖZ-5000</h4>
+                            <p class="product-description">5 eksen işleme kapasitesi, ±0.003mm hassasiyet, otomatik takım değiştirici sistemi. Siemens kontrol ünitesi ile donatılmış.</p>
+                            <span class="product-status status-available">Stokta Mevcut</span>
+                        </div>
                     </div>
-                    <div class="card-component">
-                        <div class="card-icon">🤖</div>
-                        <h3 class="card-title">Akıllı Otomasyon</h3>
-                        <p class="card-description">AI destekli PLC sistemler, IoT entegrasyonu ve endüstri 4.0 çözümleri</p>
+                    <div class="product-card">
+                        <div class="product-image">T</div>
+                        <div class="product-info">
+                            <h4 class="product-title">CNC Torna Tezgahı ÖZ-3000</h4>
+                            <p class="product-description">Yüksek hassasiyetli torna işlemleri, hidrolik mandren sistemi, otomatik çubuk besleyici opsiyonu mevcut.</p>
+                            <span class="product-status status-available">Stokta Mevcut</span>
+                        </div>
                     </div>
-                    <div class="card-component">
-                        <div class="card-icon">⚡</div>
-                        <h3 class="card-title">Enerji Optimizasyonu</h3>
-                        <p class="card-description">Sürdürülebilir üretim teknolojileri ve enerji verimli sistemler</p>
+                    <div class="product-card">
+                        <div class="product-image">G</div>
+                        <div class="product-info">
+                            <h4 class="product-title">Hassas Taşlama Makinesi ÖZ-1800</h4>
+                            <p class="product-description">Mikron seviyesinde yüzey kalitesi, otomatik ölçüm sistemi, seramik rulmanlar ile titreşimsiz çalışma.</p>
+                            <span class="product-status status-limited">Sipariş Üzerine</span>
+                        </div>
                     </div>
-                    <div class="card-component">
-                        <div class="card-icon">🔬</div>
-                        <h3 class="card-title">Teknoloji Danışmanlığı</h3>
-                        <p class="card-description">Dijital dönüşüm, proses optimizasyonu ve inovasyon danışmanlığı</p>
-                    </div>
-                    <div class="card-component">
-                        <div class="card-icon">🎯</div>
-                        <h3 class="card-title">Özel Çözümler</h3>
-                        <p class="card-description">Müşteri odaklı özel tasarım projeler ve turn-key sistemler</p>
-                    </div>
-                    <div class="card-component">
-                        <div class="card-icon">🛡️</div>
-                        <h3 class="card-title">Bakım & Destek</h3>
-                        <p class="card-description">Öngörülü bakım, 7/24 teknik destek ve performans izleme</p>
+                    <div class="product-card">
+                        <div class="product-image">W</div>
+                        <div class="product-info">
+                            <h4 class="product-title">Kaynak Otomasyon Sistemi ÖZ-WS500</h4>
+                            <p class="product-description">6 DOF endüstriyel robot, lazer seam tracking teknolojisi, çoklu kaynak pozisyonu programlanabilir sistem.</p>
+                            <span class="product-status status-available">Stokta Mevcut</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Products Component -->
-        <section id="products" class="section-component" style="background: var(--neutral-light);">
-            <div class="section-container">
-                <div class="section-header">
-                    <div class="section-subtitle">İnovasyonlarımız</div>
-                    <h2 class="section-title">İleri Teknoloji Ürünler</h2>
-                    <p class="section-description">
-                        Endüstri 4.0 standartlarında üretilen, gelecek nesil makine ve otomasyon çözümleri
-                    </p>
-                </div>
-                
-                <div class="tab-component">
-                    <div class="tab-buttons">
-                        <button class="tab-button active" onclick="showTab('machines')">
-                            🏭 İleri Makineler
-                        </button>
-                        <button class="tab-button" onclick="showTab('automation')">
-                            🤖 Akıllı Otomasyon
-                        </button>
+            
+            <div id="automation" class="tab-content">
+                <div class="grid grid-2">
+                    <div class="product-card">
+                        <div class="product-image">P</div>
+                        <div class="product-info">
+                            <h4 class="product-title">PLC Kontrol Ünitesi ÖZ-PLC400</h4>
+                            <p class="product-description">128 I/O kapasitesi, Ethernet/Profibus haberleşme, SCADA entegrasyonu, redundant sistem desteği.</p>
+                            <span class="product-status status-available">Stokta Mevcut</span>
+                        </div>
                     </div>
+                    <div class="product-card">
+                        <div class="product-image">S</div>
+                        <div class="product-info">
+                            <h4 class="product-title">Endüstriyel Sensör Sistemi ÖZ-SEN300</h4>
+                            <p class="product-description">Çoklu parametrik ölçüm, analog/dijital çıkışlar, IP67 koruma sınıfı, kalibre edilmiş test sertifikası.</p>
+                            <span class="product-status status-available">Stokta Mevcut</span>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">D</div>
+                        <div class="product-info">
+                            <h4 class="product-title">Servo Sürücü Sistemi ÖZ-SRV800</h4>
+                            <p class="product-description">Yüksek tork yoğunluğu, hassas pozisyon kontrolü, encoder feedback sistemi, overload koruması.</p>
+                            <span class="product-status status-limited">Sipariş Üzerine</span>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">E</div>
+                        <div class="product-info">
+                            <h4 class="product-title">Güç Dağıtım Panosu ÖZ-EP600</h4>
+                            <p class="product-description">Akıllı güç yönetimi, aşırı yük koruması, enerji izleme sistemi, uzaktan kontrol imkanı.</p>
+                            <span class="product-status status-available">Stokta Mevcut</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Kurumsal Bilgiler</div>
+                <h2 class="section-title">Özikiler A.Ş. Hakkında</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Şirket Profili</h3>
+                    <p>Özikiler A.Ş., 1993 yılında kurulmuş olup, endüstriyel makine imalatı ve otomasyon sistemleri alanında faaliyet gösteren köklü bir şirkettir. ISO 9001:2015 kalite yönetim sistemi sertifikasına sahip olan şirketimiz, müşteri memnuniyeti odaklı yaklaşımı ile sektörde güvenilir bir partner konumundadır.</p>
                     
-                    <div id="machines" class="tab-content active">
-                        <div class="grid-component grid-2">
-                            <div class="product-card">
-                                <div class="product-image">🏭</div>
-                                <div class="product-info">
-                                    <h4 class="product-title">CNC İşleme Merkezi IM-5000X</h4>
-                                    <p class="product-description">5 eksen işleme, ±0.003mm hassasiyet, AI destekli optimizasyon</p>
-                                    <span class="stock-badge stock-available">✓ Stokta Mevcut</span>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-image">⚡</div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Hibrit Üretim Sistemi HM-3000</h4>
-                                    <p class="product-description">Additif manufacturing + geleneksel işleme hibrit teknoloji</p>
-                                    <span class="stock-badge stock-limited">⚠ Sınırlı Stok</span>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-image">🔄</div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Akıllı Otomat Torna AT-2500</h4>
-                                    <p class="product-description">IoT entegreli, öngörülü bakım, seri üretim optimizasyonu</p>
-                                    <span class="stock-badge stock-available">✓ Stokta Mevcut</span>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-image">🎯</div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Hassas Taşlama Makinesi TM-1800</h4>
-                                    <p class="product-description">Nanometre seviye hassasiyet, otomatik kompanzasyon</p>
-                                    <span class="stock-badge stock-available">✓ Stokta Mevcut</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3>Misyonumuz</h3>
+                    <p>Endüstriyel üretim süreçlerinde teknoloji liderliği yaparak, müşterilerimizin rekabet gücünü artıran, kaliteli ve güvenilir makine sistemleri üretmek, sürdürülebilir büyüme ile sektörün gelişimine katkıda bulunmaktır.</p>
                     
-                    <div id="automation" class="tab-content">
-                        <div class="grid-component grid-2">
-                            <div class="product-card">
-                                <div class="product-image">🤖</div>
-                                <div class="product-info">
-                                    <h4 class="product-title">AI-PLC Kontrol Ünitesi AX-700</h4>
-                                    <p class="product-description">Makine öğrenmesi, 128 I/O, Ethernet/5G bağlantı</p>
-                                    <span class="stock-badge stock-available">✓ Stokta Mevcut</span>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-image">📡</div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Akıllı Sensör Sistemi SS-500</h4>
-                                    <p class="product-description">Çoklu parametrik ölçüm, kablosuz veri aktarımı</p>
-                                    <span class="stock-badge stock-available">✓ Stokta Mevcut</span>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-image">⚙️</div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Servo Aktüatör Serisi SA-1000</h4>
-                                    <p class="product-description">Yüksek tork yoğunluğu, hassas pozisyonlama</p>
-                                    <span class="stock-badge stock-limited">⚠ Sınırlı Stok</span>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-image">🔋</div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Enerji Yönetim Modülü EY-300</h4>
-                                    <p class="product-description">Akıllı güç dağıtımı, %40 enerji tasarrufu</p>
-                                    <span class="stock-badge stock-available">✓ Stokta Mevcut</span>
-                                </div>
-                            </div>
-                        </div>
+                    <h3>Vizyonumuz</h3>
+                    <p>Endüstriyel otomasyon ve makine imalatı sektöründe ulusal ve uluslararası arenada tanınan, teknoloji ve inovasyon odaklı, müşteri odaklı çözümler sunan lider bir kuruluş olmaktır.</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Yıllık Deneyim</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">850+</div>
+                        <div class="stat-label">Tamamlanan Proje</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Kurumsal Müşteri</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25</div>
+                        <div class="stat-label">İhracat Ülkesi</div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- R&D Component -->
-        <section id="rd" class="section-component" style="background: var(--gradient-creative); color: white;">
-            <div class="section-container">
-                <div class="section-header">
-                    <div class="section-subtitle" style="color: rgba(255,255,255,0.9);">İnovasyon Merkezi</div>
-                    <h2 class="section-title" style="color: white;">AR-GE Laboratuvarlarımız</h2>
-                    <p class="section-description" style="color: rgba(255,255,255,0.9);">
-                        Geleceğin teknolojilerini bugünden geliştiren araştırma ve geliştirme merkezimiz
-                    </p>
-                </div>
-                
-                <div class="grid-component grid-2">
-                    <div class="card-component" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2);">
-                        <div class="card-icon" style="background: rgba(255,255,255,0.2);">🧬</div>
-                        <h3 class="card-title" style="color: white;">Yapay Zeka & Makine Öğrenmesi</h3>
-                        <p class="card-description" style="color: rgba(255,255,255,0.9);">Öngörülü bakım, kalite kontrolü ve üretim optimizasyonu için AI algoritmaları</p>
+            
+            <div class="values-section">
+                <h3 class="values-title">Kurumsal Değerlerimiz</h3>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="value-icon">⚡</div>
+                        <h4 class="value-title">Kalite</h4>
+                        <p class="value-description">ISO standartlarında üretim, sürekli iyileştirme ve müşteri memnuniyeti odaklı kalite anlayışı.</p>
                     </div>
-                    <div class="card-component" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2);">
-                        <div class="card-icon" style="background: rgba(255,255,255,0.2);">🌱</div>
-                        <h3 class="card-title" style="color: white;">Sürdürülebilir Üretim</h3>
-                        <p class="card-description" style="color: rgba(255,255,255,0.9);">Karbon nötr üretim teknolojileri ve döngüsel ekonomi çözümleri</p>
+                    <div class="value-item">
+                        <div class="value-icon">🎯</div>
+                        <h4 class="value-title">Güvenilirlik</h4>
+                        <p class="value-description">Sözleşme koşullarına bağlılık, zamanında teslimat ve uzun vadeli iş ortaklığı yaklaşımı.</p>
                     </div>
-                    <div class="card-component" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2);">
-                        <div class="card-icon" style="background: rgba(255,255,255,0.2);">🔮</div>
-                        <h3 class="card-title" style="color: white;">İleri Malzeme Teknolojileri</h3>
-                        <p class="card-description" style="color: rgba(255,255,255,0.9);">Nano malzemeler, kompozitler ve akıllı malzeme uygulamaları</p>
+                    <div class="value-item">
+                        <div class="value-icon">🔬</div>
+                        <h4 class="value-title">İnovasyon</h4>
+                        <p class="value-description">Sürekli AR-GE faaliyetleri, teknolojik gelişmeleri takip etme ve yenilikçi çözümler üretme.</p>
                     </div>
-                    <div class="card-component" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2);">
-                        <div class="card-icon" style="background: rgba(255,255,255,0.2);">🚀</div>
-                        <h3 class="card-title" style="color: white;">Uzay & Havacılık</h3>
-                        <p class="card-description" style="color: rgba(255,255,255,0.9);">Kritik havacılık parçaları ve uzay teknolojileri için özel çözümler</p>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 4rem;">
-                    <div class="stats-component">
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <div class="stat-number" id="patents">45</div>
-                                <div class="stat-label">Patent Başvurusu</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number" id="projects">23</div>
-                                <div class="stat-label">Aktif AR-GE Projesi</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number" id="researchers">67</div>
-                                <div class="stat-label">Araştırmacı</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number" id="investment">125</div>
-                                <div class="stat-label">Milyon ₺ AR-GE Yatırımı</div>
-                            </div>
-                        </div>
+                    <div class="value-item">
+                        <div class="value-icon">🤝</div>
+                        <h4 class="value-title">Müşteri Odaklılık</h4>
+                        <p class="value-description">Müşteri ihtiyaçlarını anlama, özel çözümler geliştirme ve satış sonrası destek hizmetleri.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Component -->
-        <section id="about" class="section-component">
-            <div class="section-container">
-                <div class="section-header">
-                    <div class="section-subtitle">Kurumsal Kimliğimiz</div>
-                    <h2 class="section-title">Özikiler Hikayesi</h2>
+    <!-- Contact Section / Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>İletişim Bilgileri</h4>
+                    <p><strong>Özikiler Endüstriyel Makine San. ve Tic. A.Ş.</strong></p>
+                    <p>Organize Sanayi Bölgesi<br>
+                       Makine Sanayi Sitesi, 15. Blok No: 7-9<br>
+                       38070 Melikgazi / Kayseri</p>
+                    <p><strong>Tel:</strong> +90 352 321 45 67</p>
+                    <p><strong>Faks:</strong> +90 352 321 45 68</p>
+                    <p><strong>E-posta:</strong> info@ozikiler.com.tr</p>
                 </div>
                 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem;">
-                    <div>
-                        <div class="vision-mission-grid">
-                            <div class="vision-card">
-                                <h3 style="color: var(--primary-color); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">Vizyonumuz</h3>
-                            <p style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.7; color: #555;">
-                                Küresel ölçekte tanınan, teknoloji lideri bir şirket olarak endüstriyel dönüşümün 
-                                öncüsü olmak ve sürdürülebilir gelecek için yenilikçi çözümler üretmek.
-                            </p>
-                            </div>
-                            <div class="mission-card">
-                            <h3 style="color: var(--accent-color); font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">Misyonumuz</h3>
-                            <p style="font-size: 1.1rem; line-height: 1.7; color: #555;">
-                                İleri teknoloji makine imalatı ve akıllı otomasyon çözümleri ile müşterilerimizin 
-                                rekabet gücünü artırmak, endüstriyel verimliliği maksimize etmek ve çevreye 
-                                duyarlı üretim modellerini hayata geçirmek.
-                            </p>
-                            </div>
-                        </div>
-                        
-    
-                    </div>
-                    
-                    <div class="grid-component grid-2" style="gap: 1.5rem;">
-                        <div class="stats-component" style="padding: 2rem; text-align: center;">
-                            <div class="stat-number" style="font-size: 2.5rem; margin-bottom: 0.5rem;">30+</div>
-                            <div class="stat-label">Yıllık Deneyim</div>
-                        </div>
-                        <div class="stats-component" style="padding: 2rem; text-align: center;">
-                            <div class="stat-number" style="font-size: 2.5rem; margin-bottom: 0.5rem;">750+</div>
-                            <div class="stat-label">Proje Teslimi</div>
-                        </div>
-                        <div class="stats-component" style="padding: 2rem; text-align: center;">
-                            <div class="stat-number" style="font-size: 2.5rem; margin-bottom: 0.5rem;">200+</div>
-                            <div class="stat-label">Kurumsal Müşteri</div>
-                        </div>
-                        <div class="stats-component" style="padding: 2rem; text-align: center;">
-                            <div class="stat-number" style="font-size: 2.5rem; margin-bottom: 0.5rem;">45</div>
-                            <div class="stat-label">Ülkeye İhracat</div>
-                        </div>
-                    </div>
+                <div class="footer-section">
+                    <h4>Ürün Kategorileri</h4>
+                    <ul>
+                        <li><a href="#products">CNC İşleme Merkezleri</a></li>
+                        <li><a href="#products">Torna Tezgahları</a></li>
+                        <li><a href="#products">Taşlama Makineleri</a></li>
+                        <li><a href="#products">Kaynak Sistemleri</a></li>
+                        <li><a href="#products">Otomasyon Çözümleri</a></li>
+                        <li><a href="#products">Kontrol Sistemleri</a></li>
+                    </ul>
                 </div>
                 
-                <div style="background: white; padding: 3rem; border-radius: 20px; box-shadow: var(--shadow-light);">
-                    <h3 style="color: var(--neutral-dark); font-size: 1.8rem; margin-bottom: 2rem; text-align: center; font-weight: 700;">
-                        Değerlerimiz
-                    </h3>
-                    <div class="grid-component grid-4">
-                        <div style="text-align: center; padding: 1.5rem;">
-                            <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
-                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem; font-weight: 600;">Mükemmellik</h4>
-                            <p style="color: #666; font-size: 0.95rem;">Her projede en yüksek kalite standartları</p>
-                        </div>
-                        <div style="text-align: center; padding: 1.5rem;">
-                            <div style="font-size: 3rem; margin-bottom: 1rem;">🚀</div>
-                            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem; font-weight: 600;">İnovasyon</h4>
-                            <p style="color: #666; font-size: 0.95rem;">Sürekli araştırma ve geliştirme</p>
-                        </div>
-                        <div style="text-align: center; padding: 1.5rem;">
-                            <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
-                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem; font-weight: 600;">Güvenilirlik</h4>
-                            <p style="color: #666; font-size: 0.95rem;">Uzun vadeli ortaklık anlayışı</p>
-                        </div>
-                        <div style="text-align: center; padding: 1.5rem;">
-                            <div style="font-size: 3rem; margin-bottom: 1rem;">🌱</div>
-                            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem; font-weight: 600;">Sürdürülebilirlik</h4>
-                            <p style="color: #666; font-size: 0.95rem;">Çevre dostu üretim teknolojileri</p>
-                        </div>
+                <div class="footer-section">
+                    <h4>Hizmetlerimiz</h4>
+                    <ul>
+                        <li><a href="#services">Makine İmalatı</a></li>
+                        <li><a href="#services">Otomasyon Sistemleri</a></li>
+                        <li><a href="#services">Bakım ve Servis</a></li>
+                        <li><a href="#services">Mühendislik Danışmanlığı</a></li>
+                        <li><a href="#services">Özel Projeler</a></li>
+                        <li><a href="#services">Kalite Güvence</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kurumsal</h4>
+                    <ul>
+                        <li><a href="#about">Hakkımızda</a></li>
+                        <li><a href="#">Kalite Politikası</a></li>
+                        <li><a href="#">Sertifikalarımız</a></li>
+                        <li><a href="#">Referanslarımız</a></li>
+                        <li><a href="#">Kariyer</a></li>
+                        <li><a href="#">Haberler</a></li>
+                    </ul>
+                    <div style="margin-top: 1rem;">
+                        <span class="certification-badge">ISO 9001:2015</span>
+                        <span class="certification-badge">CE İşaretli</span>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Footer Component -->
-        <footer id="contact" class="footer-component">
-            <div class="section-container">
-                <div class="footer-grid">
-                    <div class="footer-section">
-                        <h4>🏢 İletişim Bilgileri</h4>
-                        <p>📍 Teknokent Organize Sanayi Bölgesi<br>
-                           İnovasyon Caddesi No: 42<br>
-                           06980 Kayseri, Türkiye</p>
-                        <p>📞 +90 312 555 0199</p>
-
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h4>🔗 Hızlı Linkler</h4>
-                        <ul>
-                            <li><a href="#services">🏭 Hizmetlerimiz</a></li>
-                            <li><a href="#products">🤖 Ürün Kataloğu</a></li>
-                            <li><a href="#rd">🔬 AR-GE Merkezimiz</a></li>
-                            <li><a href="#about">ℹ️ Hakkımızda</a></li>
-                            <li><a href="#">📋 Kalite Politikamız</a></li>
-                            <li><a href="#">🎓 Kariyer Fırsatları</a></li>
-                        </ul>
-                    </div>
-                    
-                
-                
-                <div class="footer-bottom">
-                    <p>&copy; 2025 Özikiler Endüstriyel Teknolojiler A.Ş. | Tüm hakları saklıdır.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-                        Designed with ❤️ using Modern Web Technologies | Privacy Policy | Terms of Service
-                    </p>
-                </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Özikiler Endüstriyel Makine San. ve Tic. A.Ş. Tüm hakları saklıdır.</p>
+                <p>Web sitesi tasarımı ve içeriği telif hakkı ile korunmaktadır.</p>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
-    <script src="scripts/main.js"></script>
-    <script src="scripts/navigation.js"></script>
-    <script src="scripts/animations.js"></script>
-    <script src="scripts/components.js"></script>
+    <script>
+        // Tab functionality
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetSection.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Active section detection on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - headerHeight - 100;
+                const sectionHeight = section.offsetHeight;
+                
+                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Hero buttons smooth scroll
+        document.querySelectorAll('.btn[href^="#"]').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetSection.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
