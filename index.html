@@ -3,701 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Özikiler A.Ş. - Endüstriyel makine imalatı ve otomasyon sistemlerinde 30+ yıllık deneyim. ISO 9001 kalite güvencesi.">
-    <title>Özikiler A.Ş. - Endüstriyel Makine İmalatı ve Otomasyon Sistemleri</title>
-    <style>
-        /* Reset & Base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            /* Conservative Corporate Colors */
-            --primary-dark: #1a1a1a;
-            --primary-gray: #2d3748;
-            --secondary-gray: #4a5568;
-            --accent-blue: #2b6cb0;
-            --accent-gold: #b8860b;
-            --neutral-light: #f7fafc;
-            --neutral-white: #ffffff;
-            --neutral-border: #e2e8f0;
-            --text-primary: #1a202c;
-            --text-secondary: #4a5568;
-            --text-light: #718096;
-            
-            /* Typography */
-            --font-primary: 'Georgia', 'Times New Roman', serif;
-            --font-secondary: 'Arial', 'Helvetica', sans-serif;
-            --font-weight-light: 300;
-            --font-weight-normal: 400;
-            --font-weight-medium: 500;
-            --font-weight-semibold: 600;
-            --font-weight-bold: 700;
-            
-            /* Spacing */
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 2rem;
-            --spacing-xl: 3rem;
-            --spacing-xxl: 4rem;
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            
-            /* Border Radius */
-            --radius-sm: 0.25rem;
-            --radius-md: 0.375rem;
-            --radius-lg: 0.5rem;
-            
-            /* Transitions */
-            --transition: all 0.15s ease-in-out;
-        }
-        
-        body {
-            font-family: var(--font-secondary);
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--neutral-white);
-            font-size: 16px;
-        }
-        
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-primary);
-            color: var(--primary-dark);
-            font-weight: var(--font-weight-bold);
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-        
-        h1 { font-size: clamp(2.25rem, 4vw, 3rem); }
-        h2 { font-size: clamp(1.875rem, 3.5vw, 2.5rem); }
-        h3 { font-size: clamp(1.5rem, 3vw, 1.875rem); }
-        h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
-        
-        p {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-        
-        /* Container */
-        .container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-lg);
-        }
-        
-        /* Header */
-        .header {
-            background: var(--neutral-white);
-            border-bottom: 2px solid var(--neutral-border);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.25rem 0;
-            min-height: 80px;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-family: var(--font-primary);
-            font-size: 1.5rem;
-            font-weight: var(--font-weight-bold);
-            color: var(--primary-dark);
-            text-decoration: none;
-        }
-        
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-dark);
-            color: white;
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            font-weight: bold;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: var(--spacing-xl);
-        }
-        
-        .nav-link {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: var(--font-weight-medium);
-            padding: 0.75rem 0;
-            position: relative;
-            transition: var(--transition);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--accent-blue);
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-blue);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-gray) 100%);
-            color: white;
-            padding: 10rem 0 8rem;
-            margin-top: 80px;
-            text-align: center;
-        }
-        
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .hero-subtitle {
-            font-size: 1rem;
-            font-weight: var(--font-weight-medium);
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-family: var(--font-secondary);
-        }
-        
-        .hero-title {
-            margin-bottom: 2rem;
-            color: white;
-            font-family: var(--font-primary);
-        }
-        
-        .hero-description {
-            font-size: 1.125rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-        }
-        
-        .hero-actions {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2.5rem;
-            border: 2px solid transparent;
-            border-radius: var(--radius-sm);
-            font-weight: var(--font-weight-semibold);
-            text-decoration: none;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-family: var(--font-secondary);
-        }
-        
-        .btn-primary {
-            background: var(--accent-gold);
-            color: white;
-            border-color: var(--accent-gold);
-        }
-        
-        .btn-primary:hover {
-            background: transparent;
-            color: var(--accent-gold);
-            border-color: var(--accent-gold);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border-color: white;
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: var(--primary-dark);
-        }
-        
-        /* Section */
-        .section {
-            padding: 7rem 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .section-subtitle {
-            color: var(--accent-blue);
-            font-weight: var(--font-weight-semibold);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 1rem;
-            font-size: 0.875rem;
-            font-family: var(--font-secondary);
-        }
-        
-        .section-title {
-            margin-bottom: 1.5rem;
-            font-family: var(--font-primary);
-        }
-        
-        .section-description {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-        
-        /* Grid */
-        .grid {
-            display: grid;
-            gap: 2.5rem;
-        }
-        
-        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
-        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-        
-        /* Cards */
-        .card {
-            background: var(--neutral-white);
-            border: 1px solid var(--neutral-border);
-            border-radius: var(--radius-lg);
-            padding: 2.5rem;
-            transition: var(--transition);
-            text-align: center;
-        }
-        
-        .card:hover {
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent-blue);
-        }
-        
-        .card-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--accent-blue);
-            color: white;
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 2rem;
-            font-weight: bold;
-        }
-        
-        .card-title {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-dark);
-            font-family: var(--font-primary);
-        }
-        
-        .card-description {
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-        
-        /* Services Section */
-        .services {
-            background: var(--neutral-light);
-        }
-        
-        /* Products Section */
-        .products {
-            background: var(--neutral-white);
-        }
-        
-        .product-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 0;
-            margin-bottom: 4rem;
-            border: 1px solid var(--neutral-border);
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-        }
-        
-        .tab-btn {
-            padding: 1rem 2rem;
-            background: var(--neutral-white);
-            border: none;
-            color: var(--text-primary);
-            font-weight: var(--font-weight-medium);
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: var(--font-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.875rem;
-        }
-        
-        .tab-btn:not(:last-child) {
-            border-right: 1px solid var(--neutral-border);
-        }
-        
-        .tab-btn.active,
-        .tab-btn:hover {
-            background: var(--accent-blue);
-            color: white;
-        }
-        
-        .product-card {
-            background: white;
-            border: 1px solid var(--neutral-border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            transition: var(--transition);
-        }
-        
-        .product-card:hover {
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent-blue);
-        }
-        
-        .product-image {
-            height: 220px;
-            background: var(--primary-gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-            font-weight: bold;
-        }
-        
-        .product-info {
-            padding: 2rem;
-        }
-        
-        .product-title {
-            font-size: 1.125rem;
-            font-weight: var(--font-weight-semibold);
-            margin-bottom: 1rem;
-            color: var(--primary-dark);
-            font-family: var(--font-primary);
-        }
-        
-        .product-description {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .product-status {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-sm);
-            font-size: 0.8rem;
-            font-weight: var(--font-weight-semibold);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .status-available {
-            background: #f0f9ff;
-            color: var(--accent-blue);
-            border: 1px solid var(--accent-blue);
-        }
-        
-        .status-limited {
-            background: #fef3c7;
-            color: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
-        }
-        
-        /* About Section */
-        .about {
-            background: var(--neutral-light);
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: start;
-            margin-bottom: 5rem;
-        }
-        
-        .about-text h3 {
-            color: var(--accent-blue);
-            margin-bottom: 1.5rem;
-            font-family: var(--font-primary);
-        }
-        
-        .about-text p {
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 2.5rem 1.5rem;
-            background: white;
-            border: 1px solid var(--neutral-border);
-            border-radius: var(--radius-lg);
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: var(--font-weight-bold);
-            color: var(--accent-blue);
-            margin-bottom: 0.5rem;
-            font-family: var(--font-primary);
-        }
-        
-        .stat-label {
-            color: var(--text-secondary);
-            font-weight: var(--font-weight-medium);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.9rem;
-        }
-        
-        .values-section {
-            margin-top: 5rem;
-            text-align: center;
-        }
-        
-        .values-title {
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            color: var(--primary-dark);
-            font-family: var(--font-primary);
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .value-item {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: white;
-            border: 1px solid var(--neutral-border);
-            border-radius: var(--radius-lg);
-        }
-        
-        .value-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .value-title {
-            font-size: 1.25rem;
-            font-weight: var(--font-weight-semibold);
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-            font-family: var(--font-primary);
-        }
-        
-        .value-description {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--primary-dark);
-            color: white;
-            padding: 4rem 0 2rem;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-section h4 {
-            color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.125rem;
-            font-family: var(--font-primary);
-        }
-        
-        .footer-section p,
-        .footer-section li {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 0.75rem;
-            line-height: 1.6;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .footer-section a:hover {
-            color: white;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .nav-menu {
-                display: none;
-            }
-            
-            .hero {
-                padding: 8rem 0 6rem;
-            }
-            
-            .section {
-                padding: 5rem 0;
-            }
-            
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .grid-2,
-            .grid-3,
-            .grid-4 {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .product-tabs {
-                flex-direction: column;
-            }
-            
-            .tab-btn:not(:last-child) {
-                border-right: none;
-                border-bottom: 1px solid var(--neutral-border);
-            }
-            
-            .card {
-                padding: 2rem;
-            }
-            
-            .section-header {
-                margin-bottom: 3rem;
-            }
-        }
-        
-        /* Tab Content */
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        /* Utility Classes */
-        .hidden { display: none; }
-        .text-center { text-align: center; }
-        .mb-0 { margin-bottom: 0; }
-        .mt-2 { margin-top: 2rem; }
-        
-        /* Professional touches */
-        .company-name {
-            font-family: var(--font-primary);
-            font-weight: var(--font-weight-bold);
-        }
-        
-        .certification-badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: var(--accent-gold);
-            color: white;
-            border-radius: var(--radius-sm);
-            font-size: 0.75rem;
-            font-weight: var(--font-weight-semibold);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-    </style>
+    <meta name="description" content="Özikiler CNC Otomat ve Makine - Endüstriyel makine imalatı ve otomasyon sistemlerinde 30+ yıllık deneyim. ISO 9001 kalite güvencesi.">
+    <title>Özikiler CNC Otomat ve Makine - Endüstriyel Makine İmalatı ve Otomasyon Sistemleri</title>
+    <link rel="stylesheet" href="styles/style.css">
+
 </head>
 <body>
     <!-- Header -->
@@ -705,8 +14,9 @@
         <div class="container">
             <nav class="nav">
                 <a href="#" class="logo">
-                    <div class="logo-icon">Ö</div>
-                    <span class="company-name">Özikiler A.Ş.</span>
+                    <img src="assets/logo/özikilerlogo111.JPG" alt="Company Logo" class="logo-icon">
+
+                    <span class="company-name">Özikiler</span>
                 </a>
                 <ul class="nav-menu">
                     <li><a href="#hero" class="nav-link active">Ana Sayfa</a></li>
@@ -720,15 +30,35 @@
     </header>
 
     <!-- Hero Section -->
+   <!--  <section id="hero" class="hero">
+    <img src="assets/logo/dış_cephe.jpeg" alt="" class="hero-bg-image">
+    <div class="container">
+        <div class="hero-content">
+    
+            <div class="hero-subtitle">Endüstriyel Mühendislik Çözümleri</div>
+            <h1 class="hero-title">Profesyonel Makine İmalatı ve Otomasyon Sistemleri</h1>
+            <p class="hero-description">
+                1985 yılından bu yana endüstriyel makine imalatı ve otomasyon sistemleri alanında
+                faaliyet gösteren Özikiler CNC Otomat ve Makine kalite güvencesi ile müşterilerine
+                güvenilir ve yüksek performanslı çözümler sunmaktadır.
+            </p>
+            <div class="hero-actions">
+                <a href="#products" class="btn btn-primary">Ürün Kataloğu</a>
+                <a href="#contact" class="btn btn-secondary">Teklif Talep Edin</a>
+            </div>
+        </div>
+    </div>
+</section> -->
+
     <section id="hero" class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-subtitle">Endüstriyel Mühendislik Çözümleri</div>
                 <h1 class="hero-title">Profesyonel Makine İmalatı ve Otomasyon Sistemleri</h1>
                 <p class="hero-description">
-                    1993 yılından bu yana endüstriyel makine imalatı ve otomasyon sistemleri alanında 
-                    faaliyet gösteren Özikiler A.Ş., ISO 9001 kalite güvencesi ile müşterilerine 
-                    güvenilir ve yüksek performanslı çözümler sunmaktadır.
+                    1985 yılından bu yana endüstriyel makine imalatı ve otomasyon sistemleri alanında
+                faaliyet gösteren Özikiler CNC Otomat ve Makine kalite güvencesi ile müşterilerine
+                güvenilir ve yüksek performanslı çözümler sunmaktadır.
                 </p>
                 <div class="hero-actions">
                     <a href="#products" class="btn btn-primary">Ürün Kataloğu</a>
@@ -745,26 +75,26 @@
                 <div class="section-subtitle">Hizmetlerimiz</div>
                 <h2 class="section-title">Kapsamlı Endüstriyel Çözümler</h2>
                 <p class="section-description">
-                    Otuz yılı aşkın deneyimimiz ile makine imalatından otomasyon sistemlerine, 
+                    Elli yılı aşkın deneyimimiz ile makine imalatından otomasyon sistemlerine, 
                     bakım hizmetlerinden mühendislik danışmanlığına kadar geniş bir yelpazede 
                     profesyonel hizmetler sunmaktayız.
                 </p>
             </div>
             <div class="grid grid-3">
-                <div class="card">
+                <!-- <div class="card">
                     <div class="card-icon">⚙</div>
                     <h3 class="card-title">Makine İmalatı</h3>
-                    <p class="card-description">CNC işleme merkezleri, hassas torna tezgahları ve özel amaçlı üretim makinelerinin tasarım ve imalatı. DIN ve ISO standartlarına uygun üretim.</p>
-                </div>
-                <div class="card">
+                    <p class="card-description">CNC işleme merkezleri, hassas torna tezgahları ve özel amaçlı üretim makinelerinin tasarım ve imalatı.</p>
+                </div> -->
+                <!-- <div class="card">
                     <div class="card-icon">🔧</div>
                     <h3 class="card-title">Otomasyon Sistemleri</h3>
                     <p class="card-description">PLC tabanlı kontrol sistemleri, SCADA yazılımları, endüstriyel haberleşme ağları ve proses otomasyon çözümleri.</p>
-                </div>
+                </div> -->
                 <div class="card">
                     <div class="card-icon">🛠</div>
                     <h3 class="card-title">Bakım ve Servis</h3>
-                    <p class="card-description">Periyodik bakım programları, arıza giderme hizmetleri, yedek parça temini ve 7/24 teknik destek imkanı.</p>
+                    <p class="card-description">Periyodik bakım programları, arıza giderme hizmetleri, yedek parça temini imkanı.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">📋</div>
@@ -776,11 +106,11 @@
                     <h3 class="card-title">Özel Projeler</h3>
                     <p class="card-description">Müşteri ihtiyaçlarına özel tasarım projeler, prototip geliştirme ve anahtar teslim sistem entegrasyonları.</p>
                 </div>
-                <div class="card">
+                <!-- <div class="card">
                     <div class="card-icon">✓</div>
                     <h3 class="card-title">Kalite Güvence</h3>
                     <p class="card-description">ISO 9001:2015 kalite yönetim sistemi kapsamında test, muayene ve belgelendirme hizmetleri.</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -791,88 +121,453 @@
             <div class="section-header">
                 <div class="section-subtitle">Ürünlerimiz</div>
                 <h2 class="section-title">Endüstriyel Makine ve Sistemler</h2>
-                <p class="section-description">
+                <!-- <p class="section-description">
                     CE işaretli ve uluslararası kalite standartlarında üretilen makine ve sistemlerimiz, 
                     endüstriyel üretimde güvenilirlik ve verimlilik sağlamaktadır.
-                </p>
+                </p> -->
             </div>
             
             <div class="product-tabs">
-                <button class="tab-btn active" onclick="showTab('machines')">İmalat Makineleri</button>
-                <button class="tab-btn" onclick="showTab('automation')">Otomasyon Sistemleri</button>
+                <button class="tab-btn active" onclick="showTab('automation')">Otomasyon Sistemleri</button>
+                <button class="tab-btn" onclick="showTab('machines')">İmalat Makineleri</button>
             </div>
             
-            <div id="machines" class="tab-content active">
+            
+            <div id="automation" class="tab-content active">
                 <div class="grid grid-2">
-                    <div class="product-card">
-                        <div class="product-image">M</div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1070.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1070.JPG');"></div>
+                        
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1082.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1082.JPG');"></div>
+                        
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1115.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1115.JPG');"></div>
+                        
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1116.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1116.JPG');"></div>
+                        <!--   -->
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1138.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1138.JPG');"></div>
+                        
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1159.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1159.JPG');"></div>
+                        
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1189.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1189.JPG');"></div>
+                        
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1191.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1191.JPG');"></div>
+                        
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1196.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1196.JPG');"></div>
+                        
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1209.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1209.JPG');"></div>
+                        
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1212.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1212.JPG');"></div>
+                        
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1214.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1214.JPG');"></div>
+                        
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1218.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1218.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1222.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1222.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1224.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1224.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1227.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1227.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1229.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1229.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1232.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1232.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1236.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1236.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1242.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1242.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1246.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1246.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1247.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1247.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1250.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1250.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1253.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1253.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1255.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1255.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1259.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1259.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1261.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1261.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1263.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1263.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1272.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1272.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1274.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1274.JPG');"></div>
+                         
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1276.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1276.JPG');"></div>
                         <div class="product-info">
-                            <h4 class="product-title">CNC İşleme Merkezi ÖZ-5000</h4>
-                            <p class="product-description">5 eksen işleme kapasitesi, ±0.003mm hassasiyet, otomatik takım değiştirici sistemi. Siemens kontrol ünitesi ile donatılmış.</p>
-                            <span class="product-status status-available">Stokta Mevcut</span>
+                             
                         </div>
                     </div>
-                    <div class="product-card">
-                        <div class="product-image">T</div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1278.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1278.JPG');"></div>
                         <div class="product-info">
-                            <h4 class="product-title">CNC Torna Tezgahı ÖZ-3000</h4>
-                            <p class="product-description">Yüksek hassasiyetli torna işlemleri, hidrolik mandren sistemi, otomatik çubuk besleyici opsiyonu mevcut.</p>
-                            <span class="product-status status-available">Stokta Mevcut</span>
+                             
                         </div>
                     </div>
-                    <div class="product-card">
-                        <div class="product-image">G</div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1284.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1284.JPG');"></div>
                         <div class="product-info">
-                            <h4 class="product-title">Hassas Taşlama Makinesi ÖZ-1800</h4>
-                            <p class="product-description">Mikron seviyesinde yüzey kalitesi, otomatik ölçüm sistemi, seramik rulmanlar ile titreşimsiz çalışma.</p>
-                            <span class="product-status status-limited">Sipariş Üzerine</span>
+                             
                         </div>
                     </div>
-                    <div class="product-card">
-                        <div class="product-image">W</div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1290.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1290.JPG');"></div>
                         <div class="product-info">
-                            <h4 class="product-title">Kaynak Otomasyon Sistemi ÖZ-WS500</h4>
-                            <p class="product-description">6 DOF endüstriyel robot, lazer seam tracking teknolojisi, çoklu kaynak pozisyonu programlanabilir sistem.</p>
-                            <span class="product-status status-available">Stokta Mevcut</span>
+                             
                         </div>
                     </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1295.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1295.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1297.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1297.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1298.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1298.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1303.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1303.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1305.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1305.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1308.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1308.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1310.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1310.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1316.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1316.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1319.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1319.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1323.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1323.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1325.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1325.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1331.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1331.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1336.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1336.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1338.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1338.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1340.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1340.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1359.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1359.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1361.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1361.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1364.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1364.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1375.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1375.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1376.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1376.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1378.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1378.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1380.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1380.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1383.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1383.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/components/IMG_1385.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/components/IMG_1385.JPG');"></div>
+                        <div class="product-info">
+                             
+                        </div>
+                    </div>
+              
                 </div>
             </div>
-            
-            <div id="automation" class="tab-content">
+
+            <div id="machines" class="tab-content">
                 <div class="grid grid-2">
-                    <div class="product-card">
-                        <div class="product-image">P</div>
-                        <div class="product-info">
-                            <h4 class="product-title">PLC Kontrol Ünitesi ÖZ-PLC400</h4>
-                            <p class="product-description">128 I/O kapasitesi, Ethernet/Profibus haberleşme, SCADA entegrasyonu, redundant sistem desteği.</p>
-                            <span class="product-status status-available">Stokta Mevcut</span>
-                        </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/kenar_kapama/IMG-20240922-WA0006.jpg">
+                        <div class="product-image" style="background-image: url('assets/images/machines/kenar_kapama/IMG-20240922-WA0006.jpg');"></div>
                     </div>
-                    <div class="product-card">
-                        <div class="product-image">S</div>
-                        <div class="product-info">
-                            <h4 class="product-title">Endüstriyel Sensör Sistemi ÖZ-SEN300</h4>
-                            <p class="product-description">Çoklu parametrik ölçüm, analog/dijital çıkışlar, IP67 koruma sınıfı, kalibre edilmiş test sertifikası.</p>
-                            <span class="product-status status-available">Stokta Mevcut</span>
-                        </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/kenar_kapama/IMG-20240922-WA0007.jpg">
+                        <div class="product-image" style="background-image: url('assets/images/machines/kenar_kapama/IMG-20240922-WA0007.jpg');"></div>
                     </div>
-                    <div class="product-card">
-                        <div class="product-image">D</div>
-                        <div class="product-info">
-                            <h4 class="product-title">Servo Sürücü Sistemi ÖZ-SRV800</h4>
-                            <p class="product-description">Yüksek tork yoğunluğu, hassas pozisyon kontrolü, encoder feedback sistemi, overload koruması.</p>
-                            <span class="product-status status-limited">Sipariş Üzerine</span>
-                        </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/kenar_kapama/IMG-20240922-WA0008.jpg">
+                        <div class="product-image" style="background-image: url('assets/images/machines/kenar_kapama/IMG-20240922-WA0008.jpg');"></div>
                     </div>
-                    <div class="product-card">
-                        <div class="product-image">E</div>
-                        <div class="product-info">
-                            <h4 class="product-title">Güç Dağıtım Panosu ÖZ-EP600</h4>
-                            <p class="product-description">Akıllı güç yönetimi, aşırı yük koruması, enerji izleme sistemi, uzaktan kontrol imkanı.</p>
-                            <span class="product-status status-available">Stokta Mevcut</span>
-                        </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/kablo_soguk_darbe_test/IMG-20250508-WA0002.jpg">
+                        <div class="product-image" style="background-image: url('assets/images/machines/kablo_soguk_darbe_test/IMG-20250508-WA0002.jpg');"></div>
                     </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/kablo_soguk_darbe_test/IMG-20250508-WA0003.jpg">
+                        <div class="product-image" style="background-image: url('assets/images/machines/kablo_soguk_darbe_test/IMG-20250508-WA0003.jpg');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/kablo_soguk_darbe_test/IMG-20250508-WA0004.jpg">
+                        <div class="product-image" style="background-image: url('assets/images/machines/kablo_soguk_darbe_test/IMG-20250508-WA0004.jpg');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/kablo_soguk_darbe_test/IMG-20250508-WA0005.jpg">
+                        <div class="product-image" style="background-image: url('assets/images/machines/kablo_soguk_darbe_test/IMG-20250508-WA0005.jpg');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/kablo_soguk_darbe_test/IMG-20250508-WA0006.jpg">
+                        <div class="product-image" style="background-image: url('assets/images/machines/kablo_soguk_darbe_test/IMG-20250508-WA0006.jpg');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/balcik_pompasi/20130414_172607.jpg">
+                        <div class="product-image" style="background-image: url('assets/images/machines/balcik_pompasi/20130414_172607.jpg');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/balcik_pompasi/IMG_7957.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/machines/balcik_pompasi/IMG_7957.JPG');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/balcik_pompasi/IMG_7958.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/machines/balcik_pompasi/IMG_7958.JPG');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/balcik_pompasi/IMG_7959.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/machines/balcik_pompasi/IMG_7959.JPG');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/balcik_pompasi/1.jpg">
+                        <div class="product-image" style="background-image: url('assets/images/machines/balcik_pompasi/1.jpg');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/balcik_pompasi/2.jpg">
+                        <div class="product-image" style="background-image: url('assets/images/machines/balcik_pompasi/2.jpg');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/balcik_pompasi/3.jpg">
+                        <div class="product-image" style="background-image: url('assets/images/machines/balcik_pompasi/3.jpg');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/balcik_pompasi/4.jpg">
+                        <div class="product-image" style="background-image: url('assets/images/machines/balcik_pompasi/4.jpg');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/balcik_pompasi/IMG_7960.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/machines/balcik_pompasi/IMG_7960.JPG');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/balcik_pompasi/IMG_7961.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/machines/balcik_pompasi/IMG_7961.JPG');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/balcik_pompasi/IMG_7965.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/machines/balcik_pompasi/IMG_7965.JPG');"></div>
+                    </div>
+                    <div class="product-card" onclick="openImageModal(this)" 
+                        data-image="assets/images/machines/balcik_pompasi/IMG_7968.JPG">
+                        <div class="product-image" style="background-image: url('assets/images/machines/balcik_pompasi/IMG_7968.JPG');"></div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -883,13 +578,23 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-subtitle">Kurumsal Bilgiler</div>
-                <h2 class="section-title">Özikiler A.Ş. Hakkında</h2>
+                <h2 class="section-title">Özikiler CNC Otomat ve Makine Hakkında</h2>
             </div>
             
             <div class="about-content">
                 <div class="about-text">
                     <h3>Şirket Profili</h3>
-                    <p>Özikiler A.Ş., 1993 yılında kurulmuş olup, endüstriyel makine imalatı ve otomasyon sistemleri alanında faaliyet gösteren köklü bir şirkettir. ISO 9001:2015 kalite yönetim sistemi sertifikasına sahip olan şirketimiz, müşteri memnuniyeti odaklı yaklaşımı ile sektörde güvenilir bir partner konumundadır.</p>
+                    <p>Özikiler CNC Otomat ve Makine, 1985 den bu yana mobilya,beyaz eşya, çelik eşya,
+                    ve otomotiv yan sanayi sektörüne  hizmet vermektedir
+                    2.nesil  yönetiminde ve 50 yılı aşkın tercübemizle
+                    seçkin firmaların imalat,makina tasarım, imalatı hızlandırma,
+                    kaliteyi artırma düşüncelerinde birikimimiz ile hizmetimize
+                    Kayseri organize sanayi bölgesinde devam etmekteyiz.
+                    ayrıca 3mm den 60mm kadar çubuk işleme özelliklerine sahip
+                    geniş ve teknolojik makine parkımızla siparişlere anında ve kaliteli cevap verebiliyoruz.</p>
+
+                </div>
+                <div class="about-text">
                     
                     <h3>Misyonumuz</h3>
                     <p>Endüstriyel üretim süreçlerinde teknoloji liderliği yaparak, müşterilerimizin rekabet gücünü artıran, kaliteli ve güvenilir makine sistemleri üretmek, sürdürülebilir büyüme ile sektörün gelişimine katkıda bulunmaktır.</p>
@@ -898,7 +603,7 @@
                     <p>Endüstriyel otomasyon ve makine imalatı sektöründe ulusal ve uluslararası arenada tanınan, teknoloji ve inovasyon odaklı, müşteri odaklı çözümler sunan lider bir kuruluş olmaktır.</p>
                 </div>
                 
-                <div class="stats-grid">
+               <!--  <div class="stats-grid">
                     <div class="stat-item">
                         <div class="stat-number">30+</div>
                         <div class="stat-label">Yıllık Deneyim</div>
@@ -914,37 +619,54 @@
                     <div class="stat-item">
                         <div class="stat-number">25</div>
                         <div class="stat-label">İhracat Ülkesi</div>
-                    </div>
-                </div>
+                    </div> 
+                </div>-->
             </div>
             
             <div class="values-section">
                 <h3 class="values-title">Kurumsal Değerlerimiz</h3>
                 <div class="values-grid">
-                    <div class="value-item">
+                   <!--  <div class="value-item">
                         <div class="value-icon">⚡</div>
                         <h4 class="value-title">Kalite</h4>
-                        <p class="value-description">ISO standartlarında üretim, sürekli iyileştirme ve müşteri memnuniyeti odaklı kalite anlayışı.</p>
-                    </div>
+                        <p class="value-description">Sürekli iyileştirme ve müşteri memnuniyeti odaklı kalite anlayışını benimsemekteyiz.</p>
+                    </div> -->
                     <div class="value-item">
                         <div class="value-icon">🎯</div>
                         <h4 class="value-title">Güvenilirlik</h4>
-                        <p class="value-description">Sözleşme koşullarına bağlılık, zamanında teslimat ve uzun vadeli iş ortaklığı yaklaşımı.</p>
+                        <p class="value-description">Sözleşme koşullarına bağlılık, zamanında teslimat ve uzun vadeli iş ortaklığı yaklaşımını benimsemekteyiz.</p>
                     </div>
                     <div class="value-item">
                         <div class="value-icon">🔬</div>
                         <h4 class="value-title">İnovasyon</h4>
-                        <p class="value-description">Sürekli AR-GE faaliyetleri, teknolojik gelişmeleri takip etme ve yenilikçi çözümler üretme.</p>
+                        <p class="value-description">Sürekli AR-GE faaliyetleri, teknolojik gelişmeleri takip etme ve yenilikçi çözümler üretmekteyiz.</p>
                     </div>
                     <div class="value-item">
                         <div class="value-icon">🤝</div>
                         <h4 class="value-title">Müşteri Odaklılık</h4>
-                        <p class="value-description">Müşteri ihtiyaçlarını anlama, özel çözümler geliştirme ve satış sonrası destek hizmetleri.</p>
+                        <p class="value-description">Felsefemiz müşteriden işi almak değil, onu yolcu ederken mutlu görmektir.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-loading" id="modalLoading"></div>
+        <button class="modal-close" onclick="closeImageModal()">&times;</button>
+        <button class="modal-nav modal-prev" onclick="navigateImage(-1)">&#8249;</button>
+        <button class="modal-nav modal-next" onclick="navigateImage(1)">&#8250;</button>
+        <div class="image-counter" id="imageCounter">1 / 1</div>
+        
+        <div class="modal-content">
+            <img id="modalImage" class="modal-image" src="" alt="">
+            <div class="modal-info">
+                <h3 id="modalTitle" class="modal-title"></h3>
+                <p id="modalDescription" class="modal-description"></p>
+            </div>
+        </div>
+    </div>
 
     <!-- Contact Section / Footer -->
     <footer id="contact" class="footer">
@@ -952,16 +674,14 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>İletişim Bilgileri</h4>
-                    <p><strong>Özikiler Endüstriyel Makine San. ve Tic. A.Ş.</strong></p>
-                    <p>Organize Sanayi Bölgesi<br>
-                       Makine Sanayi Sitesi, 15. Blok No: 7-9<br>
-                       38070 Melikgazi / Kayseri</p>
-                    <p><strong>Tel:</strong> +90 352 321 45 67</p>
-                    <p><strong>Faks:</strong> +90 352 321 45 68</p>
-                    <p><strong>E-posta:</strong> info@ozikiler.com.tr</p>
+                    <p><strong>Özikiler Cnc Otomat ve Makine</strong></p>
+                    <p>1. Organize Sanayi Bölgesi<br>
+                       26. Cd. No:6 Melikgazi / KAYSERİ</p>
+                    <p><strong>Tel:</strong> +90 352 322 11 99</p>
+                    <p><strong>E-posta:</strong> ozikiler@gmail.com</p>
                 </div>
                 
-                <div class="footer-section">
+<!--                 <div class="footer-section">
                     <h4>Ürün Kategorileri</h4>
                     <ul>
                         <li><a href="#products">CNC İşleme Merkezleri</a></li>
@@ -971,7 +691,7 @@
                         <li><a href="#products">Otomasyon Çözümleri</a></li>
                         <li><a href="#products">Kontrol Sistemleri</a></li>
                     </ul>
-                </div>
+                </div> -->
                 
                 <div class="footer-section">
                     <h4>Hizmetlerimiz</h4>
@@ -989,118 +709,19 @@
                     <h4>Kurumsal</h4>
                     <ul>
                         <li><a href="#about">Hakkımızda</a></li>
-                        <li><a href="#">Kalite Politikası</a></li>
-                        <li><a href="#">Sertifikalarımız</a></li>
-                        <li><a href="#">Referanslarımız</a></li>
-                        <li><a href="#">Kariyer</a></li>
-                        <li><a href="#">Haberler</a></li>
+                        
                     </ul>
-                    <div style="margin-top: 1rem;">
-                        <span class="certification-badge">ISO 9001:2015</span>
-                        <span class="certification-badge">CE İşaretli</span>
-                    </div>
+            
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Özikiler Endüstriyel Makine San. ve Tic. A.Ş. Tüm hakları saklıdır.</p>
-                <p>Web sitesi tasarımı ve içeriği telif hakkı ile korunmaktadır.</p>
+                <p>&copy; 2025 Özikiler CNC Otomat ve Makine tüm hakları saklıdır.</p>
+                <p>Web sitesi içeriği telif hakkı ile korunmaktadır.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Tab functionality
-        function showTab(tabName) {
-            // Hide all tab contents
-            const tabContents = document.querySelectorAll('.tab-content');
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            // Remove active class from all buttons
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            tabButtons.forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            // Show selected tab
-            document.getElementById(tabName).classList.add('active');
-            
-            // Add active class to clicked button
-            event.target.classList.add('active');
-        }
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                
-                if (targetSection) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = targetSection.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Update active nav link
-                    document.querySelectorAll('.nav-link').forEach(navLink => {
-                        navLink.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                }
-            });
-        });
-
-        // Active section detection on scroll
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const headerHeight = document.querySelector('.header').offsetHeight;
-            
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - headerHeight - 100;
-                const sectionHeight = section.offsetHeight;
-                
-                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Hero buttons smooth scroll
-        document.querySelectorAll('.btn[href^="#"]').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                
-                if (targetSection) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = targetSection.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
